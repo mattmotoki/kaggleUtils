@@ -5,8 +5,7 @@ Authors@R: person("Matt", "Motoki", email = "mhmotoki@gmail.com", role = c("aut"
 Description: Offers functions that ease loading and saving data.
 Depends: 
 	R (>= 3.4.0),
-	data.table,
-	magrittr
+	data.table
 Imports:
 	data.table,
 	jsonlite
