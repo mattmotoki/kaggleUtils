@@ -41,13 +41,13 @@
 #' @seealso \code{\link{loadData}} The complimentary function to \code{saveData}.
 #'
 #' @examples
-#' # save "train_features.csv" in ./Data/clusters/skmeans
+#' # save "./input/clusters/skmeans/train_features.csv"
 #' saveData("train_features", folder="clusters", subfolder="skmeans")
 #'
-#' # save "train_features.csv"
+#' # save "./input/train_features.csv"
 #' saveData("train", suffix="features")
 #'
-#' # save "train_features.rds"
+#' # save "./input/train_features.rds"
 #' saveData("train", suffix="features", file_ext="rds")
 #'
 #' @keywords save

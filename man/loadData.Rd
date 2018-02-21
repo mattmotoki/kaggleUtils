@@ -38,13 +38,13 @@ Use dashes to seperate terms in the \code{prefix} and \code{suffix}.
 For example, \code{"train-stage1_tfidf-sublinear.csv"}.
 }
 \examples{
-# load "train_features.csv"
+# load "./input/**/train_features.csv"
 loadData("train_features")
 
-# loads "train_features.csv"
+# loads "./input/**/train_features.csv"
 loadData("train", suffix="features")
 
-# loads "train_features.rds"
+# loads "./input/**/train_features.rds"
 loadData("train", suffix="features", file_ext="rds")
 
 }
