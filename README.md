@@ -1,3 +1,3 @@
-# kaggleUtils
-R Code for Kaggle Competitions
+# kaggleUtilsR
+Helper functions for Kaggle Competitions
 
