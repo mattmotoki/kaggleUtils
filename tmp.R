@@ -1,6 +1,8 @@
 library(devtools)
 
-install()
+dir()
+
 document()
 build()
-kaggleUtils::saveData
+install()
+load_all()

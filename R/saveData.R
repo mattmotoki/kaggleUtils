@@ -6,6 +6,9 @@
 #' Use dashes to seperate terms in the \code{prefix} and \code{suffix}.
 #' For example, \code{"train-stage1_tfidf-sublinear.csv"}.
 #'
+#' @import data.table
+#' @import jsonlite
+#'
 #' @param prefix Either the full name of the file to save (e.g.,
 #' \code{"train_features.csv"} or the prefix of the file to save.  If the full
 #' name is used then the \code{suffix} parameter should be \code{NULL} and the
@@ -48,9 +51,8 @@
 #' saveData("train", suffix="features", file_ext="rds")
 #'
 #' @keywords save
-#'
-#' @import data.table
-#' @import jsonlite
+#' @export
+
 saveData <- function(dt, prefix, suffix=NULL, folder=NULL, subfolder=NULL,
                      file_ext="csv", overwrite=TRUE, verbose=TRUE, data_path='./input', ...) {
 

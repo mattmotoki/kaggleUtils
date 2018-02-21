@@ -5,6 +5,8 @@
 #' \code{prefix} and a \code{suffix} seperated by an underscore.
 #' Use dashes to seperate terms in the \code{prefix} and \code{suffix}.
 #' For example, \code{"train-stage1_tfidf-sublinear.csv"}.
+#' @import data.table
+#' @import jsonlite
 #'
 #' @param prefix Either the full name of the file to load (e.g.,
 #' \code{"train_features.csv"} or the prefix of the file to load.  If the full
@@ -28,6 +30,8 @@
 #' @seealso \code{\link{saveData}} The complimentary function to \code{loadData}.  Data
 #' is saved with a naming convention compatible with \code{loadData}.
 #'
+#' @return The desired data to be loaded.
+#'
 #' @examples
 #' # load "train_features.csv"
 #' loadData("train_features")
@@ -40,10 +44,8 @@
 #'
 #' @keywords load
 #'
-#' @import data.table
-#' @import jsonlite
-#'
-#' @return The desired data to be loaded.
+#' @export
+
 loadData <- function(prefix, suffix=NULL, file_ext="csv", verbose=TRUE, data_path='./input',...) {
 
 
