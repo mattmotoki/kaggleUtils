@@ -49,6 +49,8 @@
 #'
 #' @keywords save
 #'
+#' @import data.table
+#' @import jsonlite
 saveData <- function(dt, prefix, suffix=NULL, folder=NULL, subfolder=NULL,
                      file_ext="csv", overwrite=TRUE, verbose=TRUE, data_path='./input', ...) {
 

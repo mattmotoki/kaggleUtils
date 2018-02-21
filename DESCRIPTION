@@ -9,8 +9,7 @@ Depends:
 	magrittr
 Imports:
 	data.table,
-	magrittr
-License: What license is it under?
+	jsonlite
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 6.0.1.9000

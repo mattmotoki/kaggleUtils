@@ -40,6 +40,9 @@
 #'
 #' @keywords load
 #'
+#' @import data.table
+#' @import jsonlite
+#'
 #' @return The desired data to be loaded.
 loadData <- function(prefix, suffix=NULL, file_ext="csv", verbose=TRUE, data_path='./input',...) {
 
