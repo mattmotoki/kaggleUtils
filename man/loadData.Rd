@@ -5,7 +5,7 @@
 \title{Convenience function for loading data.}
 \usage{
 loadData(prefix, suffix = NULL, file_ext = "csv", verbose = TRUE,
-  data_path = "./input", ...)
+  data_path = "./input", reader = NULL)
 }
 \arguments{
 \item{prefix}{Either the full name of the file to load (e.g.,
@@ -24,6 +24,9 @@ xgb model.  (default is \code{"csv"})}
 
 \item{verbose}{Whether or not to print details about the file being loaded.
 (default is \code{TRUE})}
+
+\item{reader}{Function to read the data from disk.
+(default is \code{NULL}, the reader function is inferred from \code{file_ext})}
 
 \item{...}{Additional parameters to pass the load function.}
 }

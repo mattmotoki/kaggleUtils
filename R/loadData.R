@@ -5,8 +5,10 @@
 #' \code{prefix} and a \code{suffix} seperated by an underscore.
 #' Use dashes to seperate terms in the \code{prefix} and \code{suffix}.
 #' For example, \code{"train-stage1_tfidf-sublinear.csv"}.
+#'
 #' @import data.table
-#' @import jsonlite
+#' @importFrom xgboost xgb.load
+#' @importFrom jsonlite fromJSON
 #'
 #' @param prefix Either the full name of the file to load (e.g.,
 #' \code{"train_features.csv"} or the prefix of the file to load.  If the full
@@ -25,7 +27,11 @@
 #' @param verbose Whether or not to print details about the file being loaded.
 #' (default is \code{TRUE})
 #'
+#' @param reader Function to read the data from disk.
+#' (default is \code{NULL}, the reader function is inferred from \code{file_ext})
+#'
 #' @param ... Additional parameters to pass the load function.
+#'
 #'
 #' @seealso \code{\link{saveData}} The complimentary function to \code{loadData}.  Data
 #' is saved with a naming convention compatible with \code{loadData}.
@@ -46,7 +52,7 @@
 #'
 #' @export
 
-loadData <- function(prefix, suffix=NULL, file_ext="csv", verbose=TRUE, data_path='./input',...) {
+loadData <- function(prefix, suffix=NULL, file_ext="csv", verbose=TRUE, data_path='./input', reader=NULL) {
 
 
   # parse NULL inputs
@@ -67,6 +73,7 @@ loadData <- function(prefix, suffix=NULL, file_ext="csv", verbose=TRUE, data_pat
 
   # load file
   if (verbose) cat("Loading", file_name, "\n")
+  if (!is.null(reader)) return(reader(full_name, ...))
   switch(
     file_ext,
     csv = fread,

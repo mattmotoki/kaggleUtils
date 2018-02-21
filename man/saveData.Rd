@@ -6,7 +6,7 @@
 \usage{
 saveData(dt, prefix, suffix = NULL, folder = NULL, subfolder = NULL,
   file_ext = "csv", overwrite = TRUE, verbose = TRUE,
-  data_path = "./input", ...)
+  data_path = "./input", writer = fwrite, ...)
 }
 \arguments{
 \item{prefix}{Either the full name of the file to save (e.g.,
@@ -35,6 +35,9 @@ should be overwritten.  (default is \code{TRUE})}
 
 \item{verbose}{Whether or not to print details about the file being saved
 (default is \code{TRUE})}
+
+\item{writer}{Function to write the data to disk.
+(default is \code{NULL}, the writer function is inferred from \code{file_ext})}
 
 \item{...}{Additional parameters to pass the save function.}
 }

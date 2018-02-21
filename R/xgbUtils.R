@@ -1,15 +1,13 @@
 #' Wrapper to convert a data.table to an xgb.DMatrix.
 #'
 #' @import data.table
-#' @import xgboost
+#' @importFrom xgboost xgb.DMatrix
 #'
 #' @param DT data.table to convert
 #' @param p value to pass to \code{overSample} (default is \code{p=0})
 #'
 #' @export
 dt2xgb <- function(DT, ...) {
-  loadNamespace("data.table")
-  loadNamespace("xgboost")
 
   # set up additional information
   info_list <- list(...)
