@@ -79,7 +79,7 @@ saveData <- function(dt, prefix, suffix=NULL, folder=NULL, subfolder=NULL,
 
   if (overwrite) {
     dir.create(full_path, showWarnings=F, recursive=T)
-    if (verbose) cat("   Saving", file_name, "\n")
+    if (verbose) cat("Saving", file_name, "\n")
     switch(
       file_ext,
       csv = fwrite,

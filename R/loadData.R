@@ -66,7 +66,7 @@ loadData <- function(prefix, suffix=NULL, file_ext="csv", verbose=TRUE, data_pat
     stop(sprintf("%s not found", file_name))
 
   # load file
-  if (verbose) cat("   Loading", file_name, "\n")
+  if (verbose) cat("Loading", file_name, "\n")
   switch(
     file_ext,
     csv = fread,
