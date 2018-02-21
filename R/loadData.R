@@ -27,7 +27,11 @@
 #' @param verbose Whether or not to print details about the file being loaded.
 #' (default is \code{TRUE})
 #'
+#' @param reader Function to read the data from disk.
+#' (default is \code{NULL}, the reader function is inferred from \code{file_ext})
+#'
 #' @param ... Additional parameters to pass the load function.
+#'
 #'
 #' @seealso \code{\link{saveData}} The complimentary function to \code{loadData}.  Data
 #' is saved with a naming convention compatible with \code{loadData}.
@@ -48,7 +52,7 @@
 #'
 #' @export
 
-loadData <- function(prefix, suffix=NULL, file_ext="csv", verbose=TRUE, data_path='./input',...) {
+loadData <- function(prefix, suffix=NULL, file_ext="csv", verbose=TRUE, data_path='./input', reader=NULL) {
 
 
   # parse NULL inputs
@@ -69,6 +73,7 @@ loadData <- function(prefix, suffix=NULL, file_ext="csv", verbose=TRUE, data_pat
 
   # load file
   if (verbose) cat("Loading", file_name, "\n")
+  if (!is.null(reader)) return(reader(full_name, ...))
   switch(
     file_ext,
     csv = fread,

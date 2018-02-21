@@ -4,7 +4,7 @@ kaggleUtils
 Overview
 --------
 `kaggleUtils` is an R library that offers helper functions for kaggle competitions. Functions support:
-- easy loading and saving of data in various file formats (csv, rds, xgb, json)
+- easy loading and saving of data in various file formats (csv, txt, rds, xgb, json)
 - handling of `xgb.DMatrix` and `lgb.Dataset` objects
 - encoding of categorical variables
 

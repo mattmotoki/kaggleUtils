@@ -36,6 +36,10 @@
 #' @param verbose Whether or not to print details about the file being saved
 #' (default is \code{TRUE})
 #'
+#' @param writer Function to write the data to disk.
+#' (default is \code{NULL}, the writer function is inferred from \code{file_ext})
+#'
+#'
 #' @param ... Additional parameters to pass the save function.
 #'
 #' @seealso \code{\link{loadData}} The complimentary function to \code{saveData}.
@@ -51,10 +55,11 @@
 #' saveData("train", suffix="features", file_ext="rds")
 #'
 #' @keywords save
+#'
 #' @export
 
-saveData <- function(dt, prefix, suffix=NULL, folder=NULL, subfolder=NULL,
-                     file_ext="csv", overwrite=TRUE, verbose=TRUE, data_path='./input', ...) {
+saveData <- function(dt, prefix, suffix=NULL, folder=NULL, subfolder=NULL, file_ext="csv",
+                     overwrite=TRUE, verbose=TRUE, data_path='./input', writer=fwrite, ...) {
 
   getInput <- function() {
     cat("   The file", file_name, "already exists.\n")
@@ -80,6 +85,7 @@ saveData <- function(dt, prefix, suffix=NULL, folder=NULL, subfolder=NULL,
   if (overwrite) {
     dir.create(full_path, showWarnings=F, recursive=T)
     if (verbose) cat("Saving", file_name, "\n")
+    if (!is.null(writer)) return(writer(full_name, ...))
     switch(
       file_ext,
       csv = fwrite,
