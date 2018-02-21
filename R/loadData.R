@@ -1,7 +1,6 @@
 #' Convenience function for loading data.
 #'
-#' The function recusively looks for the desired file in
-#' \code{"./input"}.
+#' The function recusively looks for the desired file in \code{"./input"}.
 #' The name of data file should follow the following naming convention:
 #' \code{prefix} and a \code{suffix} seperated by an underscore.
 #' Use dashes to seperate terms in the \code{prefix} and \code{suffix}.

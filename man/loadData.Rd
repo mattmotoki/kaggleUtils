@@ -4,24 +4,25 @@
 \alias{loadData}
 \title{Convenience function for loading data.}
 \usage{
-loadData(prefix, suffix = NULL, file_ext = "csv", verbose = TRUE, ...)
+loadData(prefix, suffix = NULL, file_ext = "csv", verbose = TRUE,
+  data_path = "./input", ...)
 }
 \arguments{
-\item{prefix}{Either the full name of the file to load (e.g., 
+\item{prefix}{Either the full name of the file to load (e.g.,
 \code{"train_features.csv"} or the prefix of the file to load.  If the full
-name is used then the \code{suffix} parameter should be \code{NULL} and the 
+name is used then the \code{suffix} parameter should be \code{NULL} and the
 file extension should be included.}
 
 \item{suffix}{Suffix of the data file to load. This parameter could be useful
 when interating through features; e.g., in a for loop. (default is \code{NULL})}
 
-\item{file_ext}{Determines the file extension of the file to load. 
-\code{loadData()} calls the appropriate function to load the data. 
-Accepted values are \code{"csv", "rds", "rda", "xgb"}.  If 
-\code{file_ext = "xgb"} then the file to load is expected to be an 
+\item{file_ext}{Determines the file extension of the file to load.
+\code{loadData()} calls the appropriate function to load the data.
+Accepted values are \code{"csv", "rds", "rda", "xgb"}.  If
+\code{file_ext = "xgb"} then the file to load is expected to be an
 xgb model.  (default is \code{"csv"})}
 
-\item{verbose}{Whether or not to print details about the file being loaded. 
+\item{verbose}{Whether or not to print details about the file being loaded.
 (default is \code{TRUE})}
 
 \item{...}{Additional parameters to pass the load function.}
@@ -30,26 +31,25 @@ xgb model.  (default is \code{"csv"})}
 The desired data to be loaded.
 }
 \description{
-The function recusively looks for the desired file in 
-\code{"C:/Dropbox/Kaggle/Instacart/data"}.  
-The name of data file should follow the following naming convention: 
-\code{prefix} and a \code{suffix} seperated by an underscore. 
+The function recusively looks for the desired file in \code{"./input"}.
+The name of data file should follow the following naming convention:
+\code{prefix} and a \code{suffix} seperated by an underscore.
 Use dashes to seperate terms in the \code{prefix} and \code{suffix}.
 For example, \code{"train-stage1_tfidf-sublinear.csv"}.
 }
 \examples{
 # load "train_features.csv"
-loadData("train_features") 
+loadData("train_features")
 
 # loads "train_features.csv"
-loadData("train", suffix="features") 
+loadData("train", suffix="features")
 
 # loads "train_features.rds"
-loadData("train", suffix="features", file_ext="rds") 
+loadData("train", suffix="features", file_ext="rds")
 
 }
 \seealso{
-\code{\link{saveData}} The complimentary function to \code{loadData}.  Data 
+\code{\link{saveData}} The complimentary function to \code{loadData}.  Data
 is saved with a naming convention compatible with \code{loadData}.
 }
 \keyword{load}
