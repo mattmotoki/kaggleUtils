@@ -5,7 +5,7 @@
 \title{Convenience function for loading data.}
 \usage{
 loadData(prefix, suffix = NULL, file_ext = "csv", verbose = TRUE,
-  data_path = "./input", reader = NULL)
+  data_path = "./input", reader = NULL, ...)
 }
 \arguments{
 \item{prefix}{Either the full name of the file to load (e.g.,
@@ -52,7 +52,7 @@ loadData("train", suffix="features", file_ext="rds")
 
 }
 \seealso{
-\code{\link{saveData}} The complimentary function to \code{loadData}.  Data
-is saved with a naming convention compatible with \code{loadData}.
+\code{\link{saveData}} The complimentary function to \code{loadData}.
+Data is saved with a naming convention compatible with \code{loadData}.
 }
 \keyword{load}

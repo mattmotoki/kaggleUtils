@@ -33,8 +33,8 @@
 #' @param ... Additional parameters to pass the load function.
 #'
 #'
-#' @seealso \code{\link{saveData}} The complimentary function to \code{loadData}.  Data
-#' is saved with a naming convention compatible with \code{loadData}.
+#' @seealso \code{\link{saveData}} The complimentary function to \code{loadData}.
+#' Data is saved with a naming convention compatible with \code{loadData}.
 #'
 #' @return The desired data to be loaded.
 #'
@@ -52,7 +52,8 @@
 #'
 #' @export
 
-loadData <- function(prefix, suffix=NULL, file_ext="csv", verbose=TRUE, data_path='./input', reader=NULL) {
+loadData <- function(prefix, suffix=NULL, file_ext="csv", verbose=TRUE,
+                     data_path='./input', reader=NULL, ...) {
 
 
   # parse NULL inputs
