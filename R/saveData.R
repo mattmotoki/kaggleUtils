@@ -7,7 +7,7 @@
 #' For example, \code{"train-stage1_tfidf-sublinear.csv"}.
 #'
 #' @import data.table
-#' @import jsonlite
+#' @importFrom xgboost xgb.save
 #'
 #' @param prefix Either the full name of the file to save (e.g.,
 #' \code{"train_features.csv"} or the prefix of the file to save.  If the full

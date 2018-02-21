@@ -5,8 +5,10 @@
 #' \code{prefix} and a \code{suffix} seperated by an underscore.
 #' Use dashes to seperate terms in the \code{prefix} and \code{suffix}.
 #' For example, \code{"train-stage1_tfidf-sublinear.csv"}.
+#'
 #' @import data.table
-#' @import jsonlite
+#' @importFrom xgboost xgb.load
+#' @importFrom jsonlite fromJSON
 #'
 #' @param prefix Either the full name of the file to load (e.g.,
 #' \code{"train_features.csv"} or the prefix of the file to load.  If the full

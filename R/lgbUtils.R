@@ -1,15 +1,13 @@
 #' Wrapper to convert a data.table to an lgb.Dataset
 #'
 #' @import data.table
-#' @import lightgbm
+#' @importFrom lightgbm lgb.Dataset
 #'
 #' @param DT data.table to convert
 #' @param p value to pass to \code{overSample} (default is \code{p=0})
 #'
 #' @export
 dt2lgb <- function(DT, ...) {
-  loadNamespace("data.table")
-  loadNamespace("lightgbm")
 
   # set up additional information
   info_list <- list(...)

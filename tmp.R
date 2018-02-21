@@ -1,7 +1,5 @@
 library(devtools)
 
-dir()
-
 document()
 build()
 install()
